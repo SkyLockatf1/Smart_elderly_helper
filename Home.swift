@@ -21,16 +21,16 @@ struct Home: View {
                     .font(.title2)
                     .fontWeight(.bold)
                     .foregroundColor(Color.purple)
-            HStack{
-                Button(action: {nurseAlert = true}){
-                    Text("Nurse")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(Color.white)
-                        .cornerRadius(10)
-                        .padding()
-                }
+                HStack{
+                    Button(action: {nurseAlert = true}){
+                        Text("Nurse")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(Color.white)
+                            .cornerRadius(10)
+                            .padding()
+                    }
                     .frame(maxWidth: 200, minHeight: 90)
                     .background(Color.red)
                     .cornerRadius(10)
@@ -52,6 +52,7 @@ struct Home: View {
                     .cornerRadius(10)
                     .alert("Function coming soon", isPresented: $comingsoon) {
                         Button("OK", role: .cancel) { }
+                    }
                 }
                 HStack{
                     Button(action: {comingsoon = true}){
@@ -73,11 +74,12 @@ struct Home: View {
                             .foregroundColor(Color.brown)
                         
                     }
-                    .alert("Function coming soon", isPresented: $comingsoon) {
-                        Button("OK", role: .cancel) { }
                     .frame(maxWidth: 200, minHeight: 90)
                     .background(Color.yellow)
                     .cornerRadius(10)
+                    .alert("Function coming soon", isPresented: $comingsoon) {
+                        Button("OK", role: .cancel) { }
+                    }
                 }
                 Button(action:{docAlert = true}){
                     Text("Emergency Call")
@@ -108,6 +110,6 @@ struct Home_Previews: PreviewProvider {
             .environment(\.sizeCategory, .medium)
             .previewLayout(.device)
             .previewDevice("iPhone 13 mini")
-
+        
     }
 }
