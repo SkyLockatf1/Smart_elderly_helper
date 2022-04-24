@@ -10,6 +10,7 @@ import SwiftUI
 struct Home: View {
     @State private var docAlert = false
     @State private var nurseAlert = false
+    @State private var comingsoon = false
     var body: some View {
         NavigationView{
             VStack{
@@ -36,7 +37,7 @@ struct Home: View {
                     .alert("Successfully Call Nurse", isPresented: $nurseAlert) {
                         Button("OK", role: .cancel) { }
                     }
-                    Button(action: {}){
+                    Button(action: {comingsoon = true}){
                         Text("Family Member")
                             .font(.title)
                             .fontWeight(.bold)
@@ -49,9 +50,11 @@ struct Home: View {
                     .frame(maxWidth: 200, minHeight: 90)
                     .background(Color.green)
                     .cornerRadius(10)
+                    .alert("Function coming soon", isPresented: $comingsoon) {
+                        Button("OK", role: .cancel) { }
                 }
                 HStack{
-                    Button(action: {}){
+                    Button(action: {comingsoon = true}){
                         Text("Doctor Advice")
                             .font(.title)
                             .fontWeight(.bold)
@@ -60,13 +63,18 @@ struct Home: View {
                     .frame(maxWidth: 200, minHeight: 90)
                     .background(Color.blue)
                     .cornerRadius(10)
-                    Button(action: {}){
+                    .alert("Function coming soon", isPresented: $comingsoon) {
+                        Button("OK", role: .cancel) { }
+                    }
+                    Button(action: {comingsoon = true}){
                         Text("Social Worker")
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(Color.brown)
                         
                     }
+                    .alert("Function coming soon", isPresented: $comingsoon) {
+                        Button("OK", role: .cancel) { }
                     .frame(maxWidth: 200, minHeight: 90)
                     .background(Color.yellow)
                     .cornerRadius(10)
