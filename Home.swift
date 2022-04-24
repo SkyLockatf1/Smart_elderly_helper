@@ -55,7 +55,6 @@ struct Home: View {
                         Text("Doctor Advice")
                             .font(.title)
                             .fontWeight(.bold)
-                            .padding(.top)
                             .foregroundColor(Color.white)
                     }
                     .frame(maxWidth: 200, minHeight: 90)
@@ -66,7 +65,6 @@ struct Home: View {
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(Color.brown)
-                            .padding(.top)
                         
                     }
                     .frame(maxWidth: 200, minHeight: 90)
@@ -78,9 +76,9 @@ struct Home: View {
                         .fontWeight(.bold)
                         .font(.largeTitle)
                         .foregroundColor(Color.white)
-                        .padding(.all)
                     
                 }
+                .padding(.all)
                 .frame(maxWidth: 300, minHeight: 80)
                 .background(Color.red)
                 .cornerRadius(10)
